@@ -1,70 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HR & Payroll Software India | Compare & Get Recommendations</title>
-<style>
-  body{font-family:Arial, sans-serif;margin:0;padding:0;color:#1f1f1f;background:#fff;}
-  header,section,footer{max-width:900px;margin:0 auto;padding:40px 20px;}
-  h1,h2{font-weight:600;}
-  .btn{background:#0066ff;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;display:inline-block;margin:10px 10px 0 0;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
-  .card{border:1px solid #e6e6e6;padding:20px;border-radius:10px;}
-  form input,form select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;}
-  form button{width:100%;padding:12px;background:#0066ff;color:white;border:0;border-radius:6px;font-size:16px;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Stack | The Better Way to Choose Payroll</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #10b981;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        
+        /* Navigation */
+        nav { background: white; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+
+        /* Hero Section */
+        header { text-align: center; padding: 100px 10%; background: white; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1.25rem; color: #64748b; margin-bottom: 2rem; }
+
+        /* Tool Grid */
+        .container { padding: 50px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .tool-card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; position: relative; }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .badge { background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        
+        .score-bar { background: #eee; height: 8px; border-radius: 4px; margin: 15px 0; overflow: hidden; }
+        .score-fill { background: var(--accent); height: 100%; }
+
+        .cta-btn { background: var(--primary); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Find the Best HR & Payroll Software in India</h1>
-  <p>Verified reviews. Real results. No fake ratings.</p>
-  <a href="#compare" class="btn">Compare Tools</a>
-  <a href="#review" class="btn" style="background:#222;">Submit Review</a>
-</header>
+    <nav>
+        <div class="logo">HR STACK</div>
+        <div>
+            <a href="#" style="text-decoration:none; color:var(--dark); margin-right:20px;">Categories</a>
+            <a href="#" class="cta-btn" style="background:var(--dark)">Write a Review</a>
+        </div>
+    </nav>
 
-<section id="compare">
-  <h2>Top HR & Payroll Tools</h2>
-  <div class="grid">
-    <div class="card"><strong>Keka</strong><br/>Best for 50–500 employee teams.<br/><a class="btn" href="#">View</a></div>
-    <div class="card"><strong>Zoho Payroll</strong><br/>Affordable & integrates with Zoho.<br/><a class="btn" href="#">View</a></div>
-    <div class="card"><strong>Darwinbox</strong><br/>Enterprise HR + workflows.<br/><a class="btn" href="#">View</a></div>
-    <div class="card"><strong>RazorpayX Payroll</strong><br/>Simple payroll + payments.<br/><a class="btn" href="#">View</a></div>
-  </div>
-</section>
+    <header>
+        <h1>Stop guessing your payroll.</h1>
+        <p class="subtitle">The only review platform built exclusively for HR Professionals. No fluff, just facts on compliance, filing, and UX.</p>
+        <input type="text" placeholder="Search HR tools (e.g. Gusto, Deel)..." style="padding:15px; width:400px; border-radius:30px; border:1px solid #ccc;">
+    </header>
 
-<section id="how">
-  <h2>How It Works</h2>
-  <p>1. Share your needs → 2. We match tools → 3. Vendors follow up (no spam)</p>
-</section>
+    <div class="container">
+        <div class="tool-card">
+            <span class="badge">Top Rated: Startups</span>
+            <h2>Gusto</h2>
+            <p>Best-in-class UI for small business owners and simple tax filing.</p>
+            <div><strong>Compliance Score: 98%</strong></div>
+            <div class="score-bar"><div class="score-fill" style="width: 98%;"></div></div>
+            <a href="#" class="cta-btn">View Full Specs</a>
+        </div>
 
-<section id="lead">
-  <h2>Get a Recommendation</h2>
-  <form action="YOUR_FORM_ENDPOINT_HERE" method="post">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Work Email" required>
-    <select name="company_size">
-      <option value="">Company Size</option>
-      <option>1-50</option><option>50-200</option><option>200-500</option><option>500+</option>
-    </select>
-    <select name="budget">
-      <option value="">Budget Range</option>
-      <option>Under ₹50k/yr</option><option>₹50k–₹1L/yr</option><option>₹1L–₹3L/yr</option><option>₹3L+/yr</option>
-    </select>
-    <button type="submit">Match Me With Tools</button>
-  </form>
-</section>
+        <div class="tool-card">
+            <span class="badge">Leader: Global</span>
+            <h2>Rippling</h2>
+            <p>Unified platform for HR, IT, and Finance. Great for scaling teams.</p>
+            <div><strong>Compliance Score: 94%</strong></div>
+            <div class="score-bar"><div class="score-fill" style="width: 94%;"></div></div>
+            <a href="#" class="cta-btn">View Full Specs</a>
+        </div>
 
-<section id="review">
-  <h2>Submit a Review</h2>
-  <p>Used one of these tools? Share your experience.</p>
-  <a href="YOUR_REVIEW_FORM_URL" class="btn">Write a Review</a>
-</section>
-
-<footer>
-  <p>© 2025 HR Software India | Contact: your-email@example.com</p>
-</footer>
+        <div class="tool-card">
+            <span class="badge">Mid-Market Choice</span>
+            <h2>BambooHR</h2>
+            <p>Excellent for culture-focused teams and employee self-service.</p>
+            <div><strong>Compliance Score: 89%</strong></div>
+            <div class="score-bar"><div class="score-fill" style="width: 89%;"></div></div>
+            <a href="#" class="cta-btn">View Full Specs</a>
+        </div>
+    </div>
 
 </body>
 </html>
