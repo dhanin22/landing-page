@@ -5,119 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vett | The Honest Software Review Platform</title>
     <meta name="description" content="Don't just buy software. Vett it. Real pricing, compliance scores, and tech stacks for HR, Sales, and Engineering tools.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/000000/ffffff?text=Vett+Your+Stack">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
-        /* BRAND COLORS: Bold Black & 'Verified' Green */
         :root { 
-            --black: #000000; 
-            --gray: #f4f4f5; 
-            --green: #059669; /* The 'Vett' Green */
-            --white: #ffffff;
+            --black: #111827; 
+            --gray: #f3f4f6; 
+            --green: #059669; 
+            --white: #ffffff; 
         }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--white); color: var(--black); }
         
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+        nav { padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; }
+        .logo { font-weight: 900; font-size: 1.8rem; text-decoration: none; color: var(--black); letter-spacing: -1px; }
+        .logo span { color: var(--green); }
         
-        /* NAVIGATION */
-        nav { padding: 24px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e4e4e7; }
-        .logo { font-weight: 900; font-size: 1.8rem; letter-spacing: -1px; text-decoration: none; color: var(--black); }
-        .logo span { color: var(--green); } /* The period is green */
-        
-        .nav-links a { color: #52525b; text-decoration: none; margin-left: 24px; font-weight: 500; font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--black); }
-
-        /* HERO SECTION */
         header { text-align: center; padding: 100px 20px; max-width: 800px; margin: 0 auto; }
-        h1 { font-size: 4rem; letter-spacing: -2px; line-height: 1; margin-bottom: 24px; font-weight: 800; }
-        .subtitle { font-size: 1.3rem; color: #52525b; margin-bottom: 40px; line-height: 1.5; }
+        h1 { font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 20px; font-weight: 800; line-height: 1.1; }
+        .subtitle { font-size: 1.25rem; color: #4b5563; margin-bottom: 40px; }
         
-        /* SEARCH BAR - The "Vett" Engine */
-        .search-container { position: relative; max-width: 550px; margin: 0 auto; }
-        .search-input { width: 100%; padding: 22px 30px; border-radius: 12px; border: 2px solid var(--black); font-size: 1.1rem; outline: none; box-sizing: border-box; transition: 0.2s; }
-        .search-input:focus { box-shadow: 4px 4px 0px var(--green); }
+        .search-container { position: relative; max-width: 600px; margin: 0 auto; }
+        .search-input { width: 100%; padding: 20px 30px; border-radius: 50px; border: 2px solid #e5e7eb; font-size: 1.1rem; outline: none; box-sizing: border-box; transition: 0.2s; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .search-input:focus { border-color: var(--black); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
 
-        /* MAIN GRID */
-        main { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
-        .grid-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 2px solid var(--black); padding-bottom: 10px; }
-        .section-title { font-size: 1.5rem; font-weight: 800; }
+        main { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+        .section-header { font-size: 1.5rem; font-weight: 800; margin-bottom: 30px; display: flex; align-items: center; }
+        .section-header::after { content: ""; flex: 1; height: 1px; background: #e5e7eb; margin-left: 20px; }
 
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { background: var(--gray); padding: 30px; border-radius: 12px; text-decoration: none; color: var(--black); display: block; transition: 0.2s; border: 1px solid transparent; }
+        .card:hover { background: var(--white); border-color: var(--black); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         
-        .card { 
-            background: var(--gray); 
-            padding: 30px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            color: var(--black); 
-            display: block; 
-            transition: 0.2s;
-            border: 1px solid transparent;
-        }
-        .card:hover { background: var(--white); border-color: var(--black); transform: translateY(-4px); box-shadow: 6px 6px 0px rgba(0,0,0,0.1); }
-        
-        .card-icon { font-size: 24px; margin-bottom: 15px; display: inline-block; background: var(--white); padding: 10px; border-radius: 50%; }
-        .card-title { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 8px; }
-        .card-sub { font-size: 0.9rem; color: #52525b; }
+        .cat-icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+        .cat-title { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+        .cat-meta { font-size: 0.9rem; color: #6b7280; }
 
-        /* FOOTER BRANDING */
-        footer { text-align: center; padding: 60px; color: #a1a1aa; font-size: 0.9rem; border-top: 1px solid #e4e4e7; margin-top: 80px; }
-
+        footer { text-align: center; padding: 40px; color: #9ca3af; font-size: 0.9rem; border-top: 1px solid #e5e7eb; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">Vett<span>.</span></a>
-        <div class="nav-links">
-            <a href="#">Methodology</a>
-            <a href="#">Pricing Leaks</a>
-            <a href="#" style="color:var(--black); font-weight:700;">Login</a>
-        </div>
+        <a href="index.html" class="logo">Vett<span>.</span></a>
+        <div><a href="#" style="color:var(--black); font-weight:600; text-decoration:none">Log In</a></div>
     </nav>
 
     <header>
-        <h1>Don't just buy.<br>Vett it.</h1>
-        <p class="subtitle">The only software reviews backed by compliance data, real pricing, and verified tech stacks.</p>
+        <h1>Software reviews,<br>without the fluff.</h1>
+        <p class="subtitle">Verified tech stacks, compliance scores, and pricing leaks for the modern buyer.</p>
         
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search to vett a tool (e.g. Rippling)...">
+            <input type="text" class="search-input" placeholder="Search a tool (e.g. Rippling)...">
         </div>
     </header>
 
     <main>
-        <div class="grid-header">
-            <div class="section-title">Essential Stacks</div>
-            <a href="#" style="color:var(--black); font-weight:600; text-decoration:none;">View All →</a>
-        </div>
-
-        <div class="category-grid">
-            <a href="payroll.html" class="card" style="background:#ecfdf5; border:1px solid #a7f3d0;">
-                <span class="card-icon">✅</span>
-                <span class="card-title">HR & Payroll</span>
-                <span class="card-sub">14 Verified Tools • Pricing Live</span>
+        <div class="section-header">Browse Categories</div>
+        
+        <div class="grid">
+            <a href="payroll.html" class="card" style="background: #ecfdf5; border: 1px solid #a7f3d0;">
+                <span class="cat-icon">💰</span>
+                <span class="cat-title">HR & Payroll</span>
+                <span class="cat-meta">14 Verified Tools • Updated Today</span>
             </a>
 
             <a href="#" class="card">
-                <span class="card-icon">🚀</span>
-                <span class="card-title">CRM & Sales</span>
-                <span class="card-sub">Building database...</span>
+                <span class="cat-icon">🚀</span>
+                <span class="cat-title">CRM & Sales</span>
+                <span class="cat-meta">Database Building...</span>
             </a>
 
             <a href="#" class="card">
-                <span class="card-icon">💻</span>
-                <span class="card-title">DevTools</span>
-                <span class="card-sub">Building database...</span>
+                <span class="cat-icon">⚡</span>
+                <span class="cat-title">DevTools</span>
+                <span class="cat-meta">Database Building...</span>
             </a>
             
              <a href="#" class="card">
-                <span class="card-icon">📢</span>
-                <span class="card-title">Marketing</span>
-                <span class="card-sub">Building database...</span>
+                <span class="cat-icon">📢</span>
+                <span class="cat-title">Marketing</span>
+                <span class="cat-meta">Database Building...</span>
             </a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Vett Inc. All data is user-verified.</p>
+        &copy; 2025 Vett Inc. Data crowdsourced from verified users.
     </footer>
 
 </body>
