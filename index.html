@@ -1,15 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
     <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 100px; background-color: #f0f0f0; }
-        h1 { color: #333; }
-        p { color: #666; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            width: 300px;
+        }
+        h1 { margin-bottom: 10px; }
+        p { opacity: 0.9; line-height: 1.5; }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .button:hover { transform: scale(1.05); background: #f0f0f0; }
     </style>
 </head>
 <body>
-    <h1>Success! My website is live.</h1>
-    <p>This page was built with the help of Gemini.</p>
+
+    <div class="card">
+        <h1>Hello, World! 👋</h1>
+        <p>I am a budding web developer. This is my very first website hosted on GitHub.</p>
+        <a href="#" class="button">Contact Me</a>
+    </div>
+
 </body>
 </html>
