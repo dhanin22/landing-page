@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-            width: 300px;
-        }
-        h1 { margin-bottom: 10px; }
-        p { opacity: 0.9; line-height: 1.5; }
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: white;
-            color: #764ba2;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .button:hover { transform: scale(1.05); background: #f0f0f0; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HR & Payroll Software India | Compare & Get Recommendations</title>
+<style>
+  body{font-family:Arial, sans-serif;margin:0;padding:0;color:#1f1f1f;background:#fff;}
+  header,section,footer{max-width:900px;margin:0 auto;padding:40px 20px;}
+  h1,h2{font-weight:600;}
+  .btn{background:#0066ff;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;display:inline-block;margin:10px 10px 0 0;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
+  .card{border:1px solid #e6e6e6;padding:20px;border-radius:10px;}
+  form input,form select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:6px;}
+  form button{width:100%;padding:12px;background:#0066ff;color:white;border:0;border-radius:6px;font-size:16px;}
+</style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>Hello, World! 👋</h1>
-        <p>I am a budding web developer. This is my very first website hosted on GitHub.</p>
-        <a href="#" class="button">Contact Me</a>
-    </div>
+<header>
+  <h1>Find the Best HR & Payroll Software in India</h1>
+  <p>Verified reviews. Real results. No fake ratings.</p>
+  <a href="#compare" class="btn">Compare Tools</a>
+  <a href="#review" class="btn" style="background:#222;">Submit Review</a>
+</header>
+
+<section id="compare">
+  <h2>Top HR & Payroll Tools</h2>
+  <div class="grid">
+    <div class="card"><strong>Keka</strong><br/>Best for 50–500 employee teams.<br/><a class="btn" href="#">View</a></div>
+    <div class="card"><strong>Zoho Payroll</strong><br/>Affordable & integrates with Zoho.<br/><a class="btn" href="#">View</a></div>
+    <div class="card"><strong>Darwinbox</strong><br/>Enterprise HR + workflows.<br/><a class="btn" href="#">View</a></div>
+    <div class="card"><strong>RazorpayX Payroll</strong><br/>Simple payroll + payments.<br/><a class="btn" href="#">View</a></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How It Works</h2>
+  <p>1. Share your needs → 2. We match tools → 3. Vendors follow up (no spam)</p>
+</section>
+
+<section id="lead">
+  <h2>Get a Recommendation</h2>
+  <form action="YOUR_FORM_ENDPOINT_HERE" method="post">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Work Email" required>
+    <select name="company_size">
+      <option value="">Company Size</option>
+      <option>1-50</option><option>50-200</option><option>200-500</option><option>500+</option>
+    </select>
+    <select name="budget">
+      <option value="">Budget Range</option>
+      <option>Under ₹50k/yr</option><option>₹50k–₹1L/yr</option><option>₹1L–₹3L/yr</option><option>₹3L+/yr</option>
+    </select>
+    <button type="submit">Match Me With Tools</button>
+  </form>
+</section>
+
+<section id="review">
+  <h2>Submit a Review</h2>
+  <p>Used one of these tools? Share your experience.</p>
+  <a href="YOUR_REVIEW_FORM_URL" class="btn">Write a Review</a>
+</section>
+
+<footer>
+  <p>© 2025 HR Software India | Contact: your-email@example.com</p>
+</footer>
 
 </body>
 </html>
