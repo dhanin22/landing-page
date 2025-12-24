@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Vett | Our Mission</title>
+    <meta name="description" content="Why we built Vett: To fix the broken software review industry.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --black: #111827; --green: #059669; --white: #ffffff; --gray: #f3f4f6; }
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--black); line-height: 1.6; }
+        
+        nav { padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; }
+        .logo { font-weight: 900; font-size: 1.8rem; text-decoration: none; color: var(--black); letter-spacing: -1px; }
+        .logo span { color: var(--green); }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
+        
+        h1 { font-size: 3rem; margin-bottom: 20px; letter-spacing: -1px; }
+        h2 { margin-top: 40px; font-size: 1.8rem; }
+        p { font-size: 1.1rem; color: #4b5563; margin-bottom: 20px; }
+        
+        .mission-box { background: var(--black); color: var(--white); padding: 40px; border-radius: 12px; margin: 40px 0; }
+        .mission-box p { color: #d1d5db; }
+        .mission-box h3 { color: var(--green); margin-top: 0; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #e5e7eb; margin-top: 40px; color: #9ca3af; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Vett<span>.</span></a>
+        <a href="index.html" style="text-decoration:none; color:var(--black); font-weight:600;">← Back Home</a>
+    </nav>
+
+    <div class="container">
+        <h1>The internet didn't need another review site.</h1>
+        <p>So we built a <strong>Truth Engine</strong> instead.</p>
+
+        <div class="mission-box">
+            <h3>The Problem</h3>
+            <p>Most software review sites are "Pay to Play." Vendors pay for higher rankings, and negative reviews get buried.</p>
+            <hr style="border-color:#374151; margin: 20px 0;">
+            <h3>The Vett Solution</h3>
+            <p>We don't accept money for rankings. We verify users via LinkedIn. We publish the actual prices companies pay.</p>
+        </div>
+
+        <h2>Our Methodology</h2>
+        <p>Every tool on Vett goes through a 3-step verification process:</p>
+        <ul style="font-size:1.1rem; color:#4b5563; padding-left: 20px;">
+            <li><strong>1. Compliance Check:</strong> Does it actually handle taxes/laws correctly?</li>
+            <li><strong>2. Stack Verification:</strong> Do real, successful companies use it?</li>
+            <li><strong>3. Pricing Transparency:</strong> What is the street price?</li>
+        </ul>
+    </div>
+
+    <footer>&copy; 2025 Vett Inc.</footer>
+</body>
+</html>
