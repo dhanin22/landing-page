@@ -3,35 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Stack | The Better Way to Choose Payroll</title>
+    <meta name="description" content="Compare the top HR & Payroll software for 2025. Unbiased reviews of Gusto, Rippling, and BambooHR focused on compliance, ease of use, and tax filing accuracy.">
+    <meta name="keywords" content="HR software reviews, best payroll software 2025, Gusto vs Rippling, payroll compliance tools, HR tech comparison">
+    <meta name="author" content="HR Stack">
+    <link rel="canonical" href="https://yourusername.github.io/my-first-site/">
+    
+    <meta property="og:title" content="HR Stack | The Honest Payroll Comparison Platform">
+    <meta property="og:description" content="Don't choose your payroll software blindly. See compliance scores and real HR reviews for Gusto, Rippling, and more.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/2563eb/ffffff?text=HR+Stack+Reviews">
+    <meta property="og:type" content="website">
+
+    <title>Best HR & Payroll Software Reviews 2025 | HR Stack</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Best HR Payroll Software Reviews",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "Product",
+            "position": 1,
+            "name": "Gusto",
+            "description": "Best-in-class payroll for small business.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "1240"
+            }
+          },
+          {
+            "@type": "Product",
+            "position": 2,
+            "name": "Rippling",
+            "description": "Unified platform for HR and IT.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "reviewCount": "850"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
     <style>
         :root {
             --primary: #2563eb;
-            --dark: #1e293b;
+            --dark: #0f172a;
             --light: #f8fafc;
             --accent: #10b981;
+            --text-gray: #64748b;
         }
-        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
         
         /* Navigation */
-        nav { background: white; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+        nav { background: white; padding: 1rem 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
 
         /* Hero Section */
-        header { text-align: center; padding: 100px 10%; background: white; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .subtitle { font-size: 1.25rem; color: #64748b; margin-bottom: 2rem; }
+        header { text-align: center; padding: 80px 20px; background: white; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark); letter-spacing: -0.02em; }
+        .subtitle { font-size: 1.25rem; color: var(--text-gray); max-width: 600px; margin: 0 auto 2rem auto; }
+        
+        /* Search Box */
+        .search-container { position: relative; max-width: 500px; margin: 0 auto; }
+        .search-input { width: 100%; padding: 18px 25px; border-radius: 50px; border: 2px solid #e2e8f0; font-size: 1rem; outline: none; transition: 0.3s; box-sizing: border-box; }
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+
+        /* Main Content */
+        main { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+        
+        /* Filter Tags for Keywords */
+        .tags { text-align: center; margin-bottom: 40px; }
+        .tag { display: inline-block; background: white; padding: 8px 16px; border-radius: 20px; border: 1px solid #e2e8f0; color: var(--text-gray); margin: 5px; font-size: 0.9rem; cursor: pointer; transition: 0.2s; }
+        .tag:hover { border-color: var(--primary); color: var(--primary); }
 
         /* Tool Grid */
-        .container { padding: 50px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .tool-card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; position: relative; }
-        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .badge { background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
-        .score-bar { background: #eee; height: 8px; border-radius: 4px; margin: 15px 0; overflow: hidden; }
-        .score-fill { background: var(--accent); height: 100%; }
+        .card { background: white; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--primary); }
+        
+        .card-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px; }
+        .badge { background: #dcfce7; color: #15803d; padding: 4px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        
+        h2 { margin: 0; font-size: 1.5rem; }
+        .stars { color: #fbbf24; font-weight: bold; font-size: 0.9rem; margin: 5px 0; }
+        
+        .score-box { background: var(--light); padding: 15px; border-radius: 8px; margin: 20px 0; }
+        .score-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .progress-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-fill { background: var(--accent); height: 100%; }
 
-        .cta-btn { background: var(--primary); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
+        .cta-btn { margin-top: auto; display: block; text-align: center; background: var(--primary); color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+        .cta-btn:hover { background: #1d4ed8; }
+
+        /* SEO Footer */
+        footer { margin-top: 80px; padding: 40px 10%; border-top: 1px solid #e2e8f0; color: var(--text-gray); font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        h3 { color: var(--dark); font-size: 1rem; margin-bottom: 1rem; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 10px; }
+        a { color: var(--text-gray); text-decoration: none; }
+        a:hover { color: var(--primary); }
+
     </style>
 </head>
 <body>
@@ -39,45 +118,124 @@
     <nav>
         <div class="logo">HR STACK</div>
         <div>
-            <a href="#" style="text-decoration:none; color:var(--dark); margin-right:20px;">Categories</a>
-            <a href="#" class="cta-btn" style="background:var(--dark)">Write a Review</a>
+            <a href="#" style="margin-right:20px; font-weight: 500;">Software Categories</a>
+            <a href="#" style="color:var(--primary); font-weight: 700;">Login</a>
         </div>
     </nav>
 
     <header>
-        <h1>Stop guessing your payroll.</h1>
-        <p class="subtitle">The only review platform built exclusively for HR Professionals. No fluff, just facts on compliance, filing, and UX.</p>
-        <input type="text" placeholder="Search HR tools (e.g. Gusto, Deel)..." style="padding:15px; width:400px; border-radius:30px; border:1px solid #ccc;">
+        <h1>Payroll Software that <span style="color:var(--primary)">actually works.</span></h1>
+        <p class="subtitle">Unbiased reviews based on tax compliance, filing speed, and user experience. We test so you don't have to.</p>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search (e.g. 'Gusto vs ADP')...">
+        </div>
     </header>
 
-    <div class="container">
-        <div class="tool-card">
-            <span class="badge">Top Rated: Startups</span>
-            <h2>Gusto</h2>
-            <p>Best-in-class UI for small business owners and simple tax filing.</p>
-            <div><strong>Compliance Score: 98%</strong></div>
-            <div class="score-bar"><div class="score-fill" style="width: 98%;"></div></div>
-            <a href="#" class="cta-btn">View Full Specs</a>
+    <main>
+        <div class="tags">
+            <span class="tag">Small Business</span>
+            <span class="tag">Enterprise</span>
+            <span class="tag">PEO Services</span>
+            <span class="tag">Contractor Payments</span>
         </div>
 
-        <div class="tool-card">
-            <span class="badge">Leader: Global</span>
-            <h2>Rippling</h2>
-            <p>Unified platform for HR, IT, and Finance. Great for scaling teams.</p>
-            <div><strong>Compliance Score: 94%</strong></div>
-            <div class="score-bar"><div class="score-fill" style="width: 94%;"></div></div>
-            <a href="#" class="cta-btn">View Full Specs</a>
-        </div>
+        <div class="grid">
+            <article class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>Gusto</h2>
+                        <div class="stars">★★★★★ 4.8/5 (1,240 Reviews)</div>
+                    </div>
+                    <span class="badge">Best Overall</span>
+                </div>
+                <p>The gold standard for modern startups. Auto-pilot tax filing in all 50 states and arguably the best user interface in the industry.</p>
+                
+                <div class="score-box">
+                    <div class="score-label"><span>Compliance Score</span> <span>98%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 98%"></div></div>
+                </div>
+                
+                <div class="score-box">
+                    <div class="score-label"><span>Ease of Setup</span> <span>95%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 95%"></div></div>
+                </div>
 
-        <div class="tool-card">
-            <span class="badge">Mid-Market Choice</span>
-            <h2>BambooHR</h2>
-            <p>Excellent for culture-focused teams and employee self-service.</p>
-            <div><strong>Compliance Score: 89%</strong></div>
-            <div class="score-bar"><div class="score-fill" style="width: 89%;"></div></div>
-            <a href="#" class="cta-btn">View Full Specs</a>
+                <a href="#" class="cta-btn">Read Full Review</a>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>Rippling</h2>
+                        <div class="stars">★★★★☆ 4.7/5 (850 Reviews)</div>
+                    </div>
+                    <span class="badge">Best for Tech</span>
+                </div>
+                <p>Goes beyond payroll to manage devices and apps. If you need to ship a laptop to a new hire in 5 minutes, this is it.</p>
+                
+                <div class="score-box">
+                    <div class="score-label"><span>Compliance Score</span> <span>94%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 94%"></div></div>
+                </div>
+
+                <div class="score-box">
+                    <div class="score-label"><span>Ease of Setup</span> <span>88%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 88%"></div></div>
+                </div>
+
+                <a href="#" class="cta-btn">Read Full Review</a>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>BambooHR</h2>
+                        <div class="stars">★★★★☆ 4.5/5 (2,100 Reviews)</div>
+                    </div>
+                    <span class="badge">Culture Focus</span>
+                </div>
+                <p>Not just payroll—it's a full HRIS. Best for mid-sized companies that care deeply about performance reviews and culture.</p>
+                
+                <div class="score-box">
+                    <div class="score-label"><span>Compliance Score</span> <span>89%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 89%"></div></div>
+                </div>
+
+                <div class="score-box">
+                    <div class="score-label"><span>Ease of Setup</span> <span>92%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" style="width: 92%"></div></div>
+                </div>
+
+                <a href="#" class="cta-btn">Read Full Review</a>
+            </article>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>About HR Stack</h3>
+                <p>We are the only review platform 100% dedicated to HR and Payroll tools. Our compliance data is updated monthly.</p>
+            </div>
+            <div>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Payroll Software</a></li>
+                    <li><a href="#">Applicant Tracking (ATS)</a></li>
+                    <li><a href="#">Time & Attendance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>For Vendors</h3>
+                <ul>
+                    <li><a href="#">Claim your Profile</a></li>
+                    <li><a href="#">Vendor Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.6;">&copy; 2025 HR Stack Reviews. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
