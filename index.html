@@ -3,443 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vett India | The Intelligence Engine for HR Stacks</title>
-    <meta name="description" content="Join 500+ Indian HR leaders vetting their software stack. Compare Keka vs Zoho vs RazorpayX with real compliance data.">
+    <title>Vett India | Software Reviews & Management</title>
+    <meta name="description" content="Compare business software. Real reviews from verified users in India.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- MODERN RESET & VARIABLES --- */
         :root {
-            --bg: #0f1115; /* Deep "SaaS" Black */
-            --surface: #161b22;
-            --surface-highlight: #21262d;
-            --text-main: #ffffff;
-            --text-muted: #8b949e;
-            --accent: #2ecc71; /* Verified Green */
-            --accent-glow: rgba(46, 204, 113, 0.4);
-            --border: #30363d;
-            --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --primary: #ff492c; /* G2-style Orange/Red for "Write Review" */
+            --brand: #059669;   /* Vett Green */
+            --dark: #1e293b;
+            --text: #334155;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --border: #e2e8f0;
         }
 
-        * { box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
-        
+        * { box-sizing: border-box; }
+
         body {
+            font-family: 'Public Sans', sans-serif;
             margin: 0;
             background-color: var(--bg);
-            color: var(--text-main);
-            font-family: var(--font);
-            overflow-x: hidden;
-            /* Subtle grain texture for that "premium" feel */
-            background-image: radial-gradient(circle at 50% 0%, #1c2333 0%, transparent 70%);
+            color: var(--text);
+            line-height: 1.5;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVBAR --- */
         nav {
+            background: var(--white);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(12px);
-            background: rgba(15, 17, 21, 0.8);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .logo {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--dark);
             text-decoration: none;
-            color: white;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
         }
+        .logo span { color: var(--brand); font-size: 2rem; line-height: 0; position: relative; top: -2px;}
 
-        .logo-dot {
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-        }
+        .nav-actions { display: flex; gap: 15px; align-items: center; }
 
-        .nav-btn {
-            background: rgba(255,255,255,0.1);
+        .btn-write-review {
+            background: var(--primary);
             color: white;
             padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: white;
-            color: black;
-            transform: translateY(-1px);
-        }
-
-        /* --- HERO SECTION --- */
-        header {
-            text-align: center;
-            padding: 100px 20px 60px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            background: rgba(46, 204, 113, 0.1);
-            border: 1px solid rgba(46, 204, 113, 0.2);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin: 0 0 24px 0;
-            background: linear-gradient(to bottom right, #ffffff 30%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0 auto 40px;
-            max-width: 600px;
-        }
-
-        /* --- GLOWING BUTTONS --- */
-        .cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: white;
-            color: black;
-            padding: 16px 32px;
-            border-radius: 12px;
+            border-radius: 4px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
+            font-size: 0.9rem;
+            transition: 0.2s;
         }
+        .btn-write-review:hover { background: #e03e25; }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
+        .btn-login { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        .btn-glass {
-            background: rgba(255,255,255,0.05);
+        /* --- HERO SECTION (SEARCH ENGINE STYLE) --- */
+        header {
+            background: #2d3436; /* Dark G2 Hero Background */
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        .btn-glass:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: white;
-        }
-
-        /* --- LOGO MARQUEE (TRUST) --- */
-        .marquee-container {
-            margin-top: 80px;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 30px 0;
-            overflow: hidden;
+            padding: 80px 20px 100px;
+            text-align: center;
             position: relative;
-            background: rgba(0,0,0,0.3);
+            overflow: hidden;
         }
-        
-        .marquee-title { text-align: center; font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
 
-        .marquee-content {
-            display: flex;
-            gap: 60px;
-            justify-content: center;
-            opacity: 0.5;
-            filter: grayscale(100%);
+        /* Abstract G2-style background shapes */
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px; left: -50px;
+            width: 300px; height: 300px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
         }
-        
-        .logo-placeholder { font-weight: 700; font-size: 1.2rem; color: white; letter-spacing: -1px; }
 
-        /* --- BENTO GRID --- */
-        main { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-        
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 40px;
+        h1 { font-size: 3rem; margin: 0 0 15px; font-weight: 700; letter-spacing: -1px; }
+        .subtitle { font-size: 1.2rem; color: #cbd5e1; margin: 0 auto 40px; max-width: 600px; }
+
+        /* THE SEARCH BAR */
+        .search-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
         }
         
-        .section-header h2 { font-size: 2rem; margin: 0; }
-        .section-header a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .search-input {
+            width: 100%;
+            padding: 20px 25px 20px 55px; /* Space for icon */
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-family: inherit;
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        /* --- TRUST BADGES --- */
+        .stats-bar {
+            background: white;
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            z-index: 10;
+        }
+        .stat-item { text-align: center; }
+        .stat-num { font-weight: 800; font-size: 1.5rem; color: var(--dark); display: block; }
+        .stat-label { font-size: 0.85rem; color: #64748b; font-weight: 600; text-transform: uppercase; }
+
+        /* --- MAIN CONTENT --- */
+        main { max-width: 1100px; margin: 0 auto 80px; padding: 0 20px; }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title::after { content:""; flex:1; height:1px; background:#e2e8f0; }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            gap: 25px;
         }
 
+        /* --- G2 STYLE CARDS --- */
         .card {
-            background: var(--surface);
+            background: white;
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 32px;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 25px;
+            transition: 0.2s;
             position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 380px;
         }
 
         .card:hover {
-            border-color: #555;
-            transform: translateY(-5px);
-            background: var(--surface-highlight);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
         }
 
-        /* Card Glow Effect */
-        .card::before {
-            content: "";
+        /* The "Leader Badge" in corner */
+        .leader-badge {
             position: absolute;
-            top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            opacity: 0;
-            transition: 0.5s;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 50px;
+            background: #f1f5f9; /* Fallback */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23059669"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'); /* Simple Icon */
+            background-size: 24px;
+            background-repeat: no-repeat;
+            background-position: center 10px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: var(--brand);
+            padding-top: 32px;
+            border-radius: 4px;
         }
-        .card:hover::before { opacity: 1; }
+        .leader-badge::after { content: "LEADER"; display: block; }
 
-        .card-tag {
-            background: rgba(46, 204, 113, 0.1);
-            color: var(--accent);
-            padding: 6px 12px;
+        .card-header { display: flex; gap: 15px; margin-bottom: 15px; }
+        .logo-box {
+            width: 60px; height: 60px;
+            background: #f8fafc;
             border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            align-self: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .card h3 { font-size: 1.8rem; margin: 0 0 10px 0; }
-        .card p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
-        
-        .rating-box {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            border: 1px solid #e2e8f0;
         }
-        .stars { color: #f1c40f; }
 
-        .price {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
+        .card-title h3 { margin: 0 0 5px; font-size: 1.2rem; font-weight: 700; }
+        .stars { color: #f59e0b; font-size: 0.9rem; font-weight: 700; }
+        .review-count { color: #64748b; font-weight: 400; font-size: 0.85rem; margin-left: 5px; }
+
+        .card-body p { font-size: 0.95rem; color: #475569; margin-bottom: 20px; line-height: 1.6; }
+
+        .features { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .pill { 
+            background: #f1f5f9; 
+            color: #475569; 
+            padding: 4px 10px; 
+            border-radius: 50px; 
+            font-size: 0.75rem; 
+            font-weight: 600;
+        }
+
+        .btn-compare {
             margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .btn-card {
-            display: block;
             text-align: center;
-            margin-top: 20px;
-            background: white;
-            color: black;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 700;
+            display: block;
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            border-radius: 6px;
             text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
             transition: 0.2s;
         }
-        .btn-card:hover { background: #e2e8f0; }
+        .btn-compare:hover { border-color: var(--brand); color: var(--brand); background: #f0fdf4; }
 
-        /* --- HOW IT WORKS (Timeline) --- */
-        .steps {
-            max-width: 800px;
-            margin: 100px auto;
-            position: relative;
-        }
-        .step-item {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .step-number {
-            font-size: 4rem;
-            font-weight: 800;
-            color: rgba(255,255,255,0.05);
-            line-height: 0.8;
-            position: absolute;
-            left: -30px;
-            top: -10px;
-            z-index: 0;
-        }
-        .step-content { z-index: 1; position: relative; }
-        .step-content h3 { font-size: 1.5rem; margin: 0 0 10px 0; }
-
-        /* MOBILE FIXES */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .cta-group { flex-direction: column; }
-            .marquee-content { flex-wrap: wrap; gap: 30px; }
+        /* --- FOOTER --- */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 60px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
         }
 
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .stats-bar { flex-direction: column; gap: 20px; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            <div class="logo-dot"></div>
-            Vett.
-        </a>
-        <a href="write-review.html" class="nav-btn">Get ₹200 Voucher →</a>
+        <a href="index.html" class="logo">Vett<span>.</span></a>
+        <div class="nav-actions">
+            <a href="#" class="btn-login">Log In</a>
+            <a href="write-review.html" class="btn-write-review">Write a Review</a>
+        </div>
     </nav>
 
     <header>
-        <div class="pill">✨ 500+ Verified Indian Companies</div>
-        <h1>Compliance data is<br>broken. We fixed it.</h1>
-        <p class="subtitle">Join the first private network of Indian HR leaders sharing real payroll pricing, hidden fees, and PF compliance scores.</p>
+        <h1>Where you go for software.</h1>
+        <p class="subtitle">Join 5,000+ Indian companies choosing the right stack. Verified reviews, pricing, and compliance scores.</p>
         
-        <div class="cta-group">
-            <a href="compare-keka-zoho.html" class="btn-primary">Explore The Data</a>
-            <a href="write-review.html" class="btn-glass">I Have Data (Get Paid)</a>
+        <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search for Keka, Zoho, RazorpayX...">
         </div>
     </header>
 
-    <div class="marquee-container">
-        <div class="marquee-title">Trusted by HR Teams At</div>
-        <div class="marquee-content">
-            <span class="logo-placeholder">Zomato</span>
-            <span class="logo-placeholder">Razorpay</span>
-            <span class="logo-placeholder">Swiggy</span>
-            <span class="logo-placeholder">Cred</span>
-            <span class="logo-placeholder">Zerodha</span>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-num">150+</span>
+            <span class="stat-label">Software Listed</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">5k+</span>
+            <span class="stat-label">Monthly Users</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Verified Humans</span>
         </div>
     </div>
 
     <main>
-        <div class="section-header">
-            <h2>The Leaderboard</h2>
-            <a href="#">View All Software →</a>
-        </div>
+        <div class="section-title">Trending in HR & Payroll</div>
 
         <div class="grid">
-            <article class="card">
-                <div>
-                    <span class="card-tag">#1 FOR UX</span>
-                    <div class="rating-box">
-                        <h3>Keka</h3>
-                        <div class="stars">★★★★★</div>
+            <div class="card">
+                <div class="leader-badge"></div>
+                <div class="card-header">
+                    <div class="logo-box" style="color:#6366f1;">K</div>
+                    <div class="card-title">
+                        <h3>Keka HR</h3>
+                        <div class="stars">★★★★★ <span class="review-count">(420 reviews)</span></div>
                     </div>
-                    <p>The "Apple" of Indian HR software. Modern, fast, and employees actually like the mobile app. Best for 100+ employees.</p>
                 </div>
-                <div class="price">
-                    ₹6,999/mo <span style="font-size:0.9rem; color:#888; font-weight:400;">+ ₹60/user</span>
+                <div class="card-body">
+                    <p>The "Apple" of Indian HR software. Best-in-class UI/UX, but comes with a premium price tag. Highly rated for attendance tracking.</p>
+                    <div class="features">
+                        <span class="pill">#1 Usability</span>
+                        <span class="pill">Mobile App</span>
+                    </div>
                 </div>
-                <a href="compare-keka-zoho.html" class="btn-card">View Compliance Data</a>
-            </article>
+                <a href="compare-keka-zoho.html" class="btn-compare">Compare vs Zoho</a>
+            </div>
 
-            <article class="card">
-                <div>
-                    <span class="card-tag">BEST VALUE</span>
-                    <div class="rating-box">
+            <div class="card">
+                <div class="leader-badge"></div>
+                <div class="card-header">
+                    <div class="logo-box" style="color:#eab308;">Z</div>
+                    <div class="card-title">
                         <h3>Zoho Payroll</h3>
-                        <div class="stars">★★★★☆</div>
+                        <div class="stars">★★★★☆ <span class="review-count">(850 reviews)</span></div>
                     </div>
-                    <p>The budget king. If you already use Zoho Books, this is automatic. UI is dated, but the tax engine is bulletproof.</p>
                 </div>
-                <div class="price">
-                    ₹50/mo <span style="font-size:0.9rem; color:#888; font-weight:400;">per user (Flat)</span>
+                <div class="card-body">
+                    <p>The budget-friendly giant. Seamless integration if you use Zoho Books. The interface is simple, but the tax engine is robust.</p>
+                    <div class="features">
+                        <span class="pill">Best Value</span>
+                        <span class="pill">Books Sync</span>
+                    </div>
                 </div>
-                <a href="compare-keka-zoho.html" class="btn-card">View Compliance Data</a>
-            </article>
+                <a href="compare-keka-zoho.html" class="btn-compare">Compare vs Keka</a>
+            </div>
 
-             <article class="card">
-                <div>
-                    <span class="card-tag">MOST AUTOMATED</span>
-                    <div class="rating-box">
+            <div class="card">
+                <div class="card-header">
+                    <div class="logo-box" style="color:#0f172a;">R</div>
+                    <div class="card-title">
                         <h3>RazorpayX</h3>
-                        <div class="stars">★★★★☆</div>
+                        <div class="stars">★★★★☆ <span class="review-count">(120 reviews)</span></div>
                     </div>
-                    <p>It actually moves the money. The only tool that pays salaries and TDS automatically. Support can be tricky.</p>
                 </div>
-                <div class="price">
-                    ₹100/mo <span style="font-size:0.9rem; color:#888; font-weight:400;">per user</span>
+                <div class="card-body">
+                    <p>The only platform that handles money transfer. It automates salary disbursal and TDS payments to the government.</p>
+                    <div class="features">
+                        <span class="pill">Auto-TDS</span>
+                        <span class="pill">Banking</span>
+                    </div>
                 </div>
-                <a href="#" class="btn-card" style="background:#21262d; color:white; border:1px solid #30363d;">Waiting List</a>
-            </article>
-        </div>
-
-        <div class="steps">
-            <h2 style="text-align:center; margin-bottom:60px; font-size:2rem;">How we verify truth.</h2>
-            
-            <div class="step-item">
-                <div class="step-number">01</div>
-                <div class="step-content">
-                    <h3 style="color:var(--accent);">You spill the tea</h3>
-                    <p style="color:#8b949e;">Submit an anonymous review about your payroll software. We want the ugly details about support and hidden fees.</p>
-                </div>
-            </div>
-
-            <div class="step-item">
-                <div class="step-number">02</div>
-                <div class="step-content">
-                    <h3 style="color:var(--accent);">We vet you</h3>
-                    <p style="color:#8b949e;">We check your LinkedIn profile to confirm you actually work in HR. No bots. No marketing agencies.</p>
-                </div>
-            </div>
-
-            <div class="step-item">
-                <div class="step-number">03</div>
-                <div class="step-content">
-                    <h3 style="color:var(--accent);">You get paid</h3>
-                    <p style="color:#8b949e;">Once verified, a <strong>₹200 Amazon Voucher</strong> hits your inbox within 24 hours.</p>
-                </div>
+                <a href="#" class="btn-compare">View Pricing</a>
             </div>
         </div>
+
+        <div style="background:#059669; color:white; border-radius:12px; padding:40px; margin-top:60px; text-align:center; position:relative; overflow:hidden;">
+            <div style="position:relative; z-index:2;">
+                <h2 style="margin:0 0 10px;">Use software at work?</h2>
+                <p style="margin:0 0 25px; opacity:0.9;">Help your peers by sharing the truth. We pay for honesty.</p>
+                <a href="write-review.html" style="background:white; color:#059669; padding:12px 30px; text-decoration:none; font-weight:800; border-radius:4px; display:inline-block;">Write a Review (Get ₹200)</a>
+            </div>
+        </div>
+
     </main>
 
-    <footer style="text-align:center; padding:80px 20px; color:#444; font-size:0.9rem;">
-        &copy; 2025 Vett India. <br>Design inspired by the best. Built for the truth.
+    <footer>
+        <p>&copy; 2025 Vett India. Inspired by G2, built for India.</p>
+        <p><a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="vendor.html">Vendors</a></p>
     </footer>
 
 </body>
