@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Write a Review - Get ₹200 Voucher | Vett</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -14,8 +15,9 @@
         label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #374151; }
         input, select, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
         
-        .btn-submit { background: #000; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+        .btn-submit { background: #000; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.2s; }
         .btn-submit:hover { background: #333; }
+        .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -28,7 +30,7 @@
             🎁 Offer: Get a ₹200 Amazon Voucher for a verified review. (First 50 users only)
         </div>
 
-        <form action="https://script.google.com/macros/s/AKfycbytpMHoxuWAF2Fy2xqcGC_F4Nwo3kR7ajpge4hDBzf4aoGbSVbrnmESSTHwEoOPlBJ08w/exec" method="POST" id="reviewForm">
+        <form name="submit-to-google-sheet">
             
             <label>Which software do you use?</label>
             <select name="software" required>
@@ -66,22 +68,39 @@
             <button type="submit" class="btn-submit">Submit Review</button>
         </form>
         
-        <p style="font-size:0.8rem; color:#9ca3af; text-align:center; margin-top:15px;">Vouchers sent within 24hrs after verification.</p>
+        <p id="msg" style="text-align:center; margin-top:15px; font-weight:bold;"></p>
     </div>
-<script>
-  const form = document.getElementById('reviewForm');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-    })
-    .then(response => {
-        alert("Success! Your voucher is on the way.");
-        window.location.href = 'index.html';
-    })
-    .catch(error => console.error('Error!', error.message));
-  });
-</script>
-</body>
-</html>
+
+    <script>
+        // -------------------------------------------------------------------
+        // PASTE YOUR GOOGLE WEB APP URL BELOW
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbytpMHoxuWAF2Fy2xqcGC_F4Nwo3kR7ajpge4hDBzf4aoGbSVbrnmESSTHwEoOPlBJ08w/exec'
+        // -------------------------------------------------------------------
+
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        const submitBtn = document.querySelector(".btn-submit")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            submitBtn.disabled = true
+            submitBtn.innerHTML = "Submitting..."
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "✅ Success! Voucher on the way."
+                    msg.style.color = "#059669"
+                    submitBtn.innerHTML = "Sent!"
+                    setTimeout(function(){
+                        form.reset()
+                        submitBtn.disabled = false
+                        submitBtn.innerHTML = "Submit Review"
+                        msg.innerHTML = ""
+                    }, 5000)
+                })
+                .catch(error => {
+                    msg.innerHTML = "❌ Error! Check internet or try again."
+                    msg.style.color = "red"
+                    submitBtn.disabled = false
+                    submitBtn.innerHTML = "Submit Review"
+                    console.error('Error!', error.message
