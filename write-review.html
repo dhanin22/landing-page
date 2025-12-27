@@ -16,7 +16,6 @@
         
         .btn-submit { background: #000; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; }
         .btn-submit:hover { background: #333; }
-        .linkedin-btn { background: #0077b5; color: white; width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: 600; margin-bottom: 20px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -29,43 +28,60 @@
             🎁 Offer: Get a ₹200 Amazon Voucher for a verified review. (First 50 users only)
         </div>
 
-        <button class="linkedin-btn">Login with LinkedIn (Required for Voucher)</button>
-
-        <form>
+        <form action="https://script.google.com/macros/s/AKfycbytpMHoxuWAF2Fy2xqcGC_F4Nwo3kR7ajpge4hDBzf4aoGbSVbrnmESSTHwEoOPlBJ08w/exec" method="POST" id="reviewForm">
+            
             <label>Which software do you use?</label>
-            <select>
-                <option>Keka</option>
-                <option>Zoho Payroll</option>
-                <option>RazorpayX</option>
-                <option>GreytHR</option>
-                <option>Darwinbox</option>
+            <select name="software" required>
+                <option value="" disabled selected>Select Software</option>
+                <option value="Keka">Keka</option>
+                <option value="Zoho">Zoho Payroll</option>
+                <option value="RazorpayX">RazorpayX</option>
+                <option value="GreytHR">GreytHR</option>
+                <option value="Darwinbox">Darwinbox</option>
             </select>
 
             <label>Does their Support team pick up calls?</label>
-            <select>
-                <option>Yes, instantly</option>
-                <option>Within 24 hours</option>
-                <option>No, it's terrible</option>
+            <select name="support_rating" required>
+                <option value="Instant">Yes, instantly</option>
+                <option value="24hrs">Within 24 hours</option>
+                <option value="Terrible">No, it's terrible</option>
             </select>
 
             <label>Is the PF/TDS calculation accurate?</label>
-            <select>
-                <option>Yes, 100% accurate</option>
-                <option>Mostly, some minor errors</option>
-                <option>No, we calculate manually in Excel</option>
+            <select name="compliance_rating" required>
+                <option value="100%">Yes, 100% accurate</option>
+                <option value="Mostly">Mostly, some minor errors</option>
+                <option value="Manual">No, we calculate manually in Excel</option>
             </select>
 
             <label>One "Pro" and one "Con"?</label>
-            <textarea rows="4" placeholder="Pro: Good mobile app. Con: Reports are slow..."></textarea>
+            <textarea name="feedback" rows="4" placeholder="Pro: Good mobile app. Con: Reports are slow..." required></textarea>
+
+            <label>Your LinkedIn Profile URL (For Verification)</label>
+            <input type="url" name="linkedin_url" placeholder="https://linkedin.com/in/yourname" required>
 
             <label>Work Email (To send the voucher)</label>
-            <input type="email" placeholder="you@company.com">
+            <input type="email" name="email" placeholder="you@company.com" required>
 
             <button type="submit" class="btn-submit">Submit Review</button>
         </form>
         
-        <p style="font-size:0.8rem; color:#9ca3af; text-align:center; margin-top:15px;">We verify employment via LinkedIn. Vouchers sent within 24hrs.</p>
+        <p style="font-size:0.8rem; color:#9ca3af; text-align:center; margin-top:15px;">Vouchers sent within 24hrs after verification.</p>
     </div>
-
+<script>
+  const form = document.getElementById('reviewForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+    })
+    .then(response => {
+        alert("Success! Your voucher is on the way.");
+        window.location.href = 'index.html';
+    })
+    .catch(error => console.error('Error!', error.message));
+  });
+</script>
 </body>
 </html>
