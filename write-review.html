@@ -9,15 +9,17 @@
         body { font-family: 'Inter', sans-serif; margin: 0; background: #f9fafb; display: flex; justify-content: center; padding: 40px 20px; }
         .form-container { background: white; width: 100%; max-width: 500px; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
         
-        h1 { font-size: 1.8rem; margin-top: 0; }
+        h1 { font-size: 1.8rem; margin-top: 0; color: #111827; }
         .offer-banner { background: #fffbeb; color: #92400e; padding: 15px; border-radius: 8px; font-weight: 600; margin-bottom: 20px; border: 1px solid #fcd34d; }
         
         label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #374151; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1rem; }
         
         .btn-submit { background: #000; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.2s; }
         .btn-submit:hover { background: #333; }
         .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
+        
+        #msg { text-align: center; margin-top: 15px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -36,7 +38,7 @@
             <select name="software" required>
                 <option value="" disabled selected>Select Software</option>
                 <option value="Keka">Keka</option>
-                <option value="Zoho">Zoho Payroll</option>
+                <option value="Zoho Payroll">Zoho Payroll</option>
                 <option value="RazorpayX">RazorpayX</option>
                 <option value="GreytHR">GreytHR</option>
                 <option value="Darwinbox">Darwinbox</option>
@@ -44,6 +46,7 @@
 
             <label>Does their Support team pick up calls?</label>
             <select name="support_rating" required>
+                <option value="" disabled selected>Select Rating</option>
                 <option value="Instant">Yes, instantly</option>
                 <option value="24hrs">Within 24 hours</option>
                 <option value="Terrible">No, it's terrible</option>
@@ -51,6 +54,7 @@
 
             <label>Is the PF/TDS calculation accurate?</label>
             <select name="compliance_rating" required>
+                <option value="" disabled selected>Select Rating</option>
                 <option value="100%">Yes, 100% accurate</option>
                 <option value="Mostly">Mostly, some minor errors</option>
                 <option value="Manual">No, we calculate manually in Excel</option>
@@ -68,15 +72,11 @@
             <button type="submit" class="btn-submit">Submit Review</button>
         </form>
         
-        <p id="msg" style="text-align:center; margin-top:15px; font-weight:bold;"></p>
+        <p id="msg"></p>
     </div>
 
     <script>
-        // -------------------------------------------------------------------
-        // PASTE YOUR GOOGLE WEB APP URL BELOW
         const scriptURL = 'https://script.google.com/macros/s/AKfycbytpMHoxuWAF2Fy2xqcGC_F4Nwo3kR7ajpge4hDBzf4aoGbSVbrnmESSTHwEoOPlBJ08w/exec'
-        // -------------------------------------------------------------------
-
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
         const submitBtn = document.querySelector(".btn-submit")
@@ -91,16 +91,24 @@
                     msg.innerHTML = "✅ Success! Voucher on the way."
                     msg.style.color = "#059669"
                     submitBtn.innerHTML = "Sent!"
+                    
+                    // Reset form after 4 seconds
                     setTimeout(function(){
                         form.reset()
                         submitBtn.disabled = false
                         submitBtn.innerHTML = "Submit Review"
                         msg.innerHTML = ""
-                    }, 5000)
+                    }, 4000)
                 })
                 .catch(error => {
-                    msg.innerHTML = "❌ Error! Check internet or try again."
+                    msg.innerHTML = "❌ Error! Please try again."
                     msg.style.color = "red"
                     submitBtn.disabled = false
                     submitBtn.innerHTML = "Submit Review"
-                    console.error('Error!', error.message
+                    console.error('Error!', error.message)
+                })
+        })
+    </script>
+
+</body>
+</html>
